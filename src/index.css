@@ -103,21 +103,22 @@ input:focus {
     display: flex;
     flex-wrap: wrap;
   }
+}
 
+.pet {
+    margin: 1rem;
+    max-width: 300px; /* Add this to limit maximum width */
+}
+  
+@media (min-width: 768px) {
+  .pet-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Add this to center items */
+  }
   .pet {
     width: calc(33% - 2rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .pet {
-    width: calc(25% - 2rem);
-  }
-}
-
-@media (min-width: 1200px) {
-  .pet {
-    width: calc(20% - 2rem);
+    max-width: 300px; /* Keep the max-width constraint */
   }
 }
 
