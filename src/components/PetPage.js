@@ -4,7 +4,7 @@ import { useState } from "react";
 import Search from './Search';
 import NewPetForm from "./NewPetForm";
 
-console.log(pets)
+// console.log(pets)
 
 function PetPage(){
 
@@ -36,9 +36,17 @@ function PetPage(){
         }))
     }
 
+    function addPet(newPetData){
+        // console.log(newPetData)
+        // console.log(petsState)
+        const updatedPetsArray = [...petsState, newPetData]
+        setPetsState(updatedPetsArray)
+        
+    }
+
     return (
         <main>
-            <NewPetForm/>
+            <NewPetForm addPet={addPet}/>
             <Search updateSearchText={updateSearchText}/>
             <PetList pets={filteredPets} deletePet={deletePet} updatePet={updatePet}/>
         </main>
